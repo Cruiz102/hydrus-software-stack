@@ -51,6 +51,27 @@ To run all the ros nodes at the same time you can use the `autonomy.launch` laun
 roslaunch autonomy autonomy.launch
 ```
 
+## Node monitoring
+
+There is a helper script that prints CPU and memory usage for all running ROS
+nodes. This can be useful when debugging performance issues.
+
+```bash
+rosrun autonomy node_monitor.py
+```
+The update rate can be changed with the `~interval` parameter (seconds).
+
+## CV publisher framerate
+
+To estimate the frame rate of the `cv_publishers` node from log messages you can
+use the helper script below:
+
+```bash
+rosrun autonomy fps_from_logs.py
+```
+The window size for averaging can be customised with the `~window_size`
+parameter.
+
 
 ## Download ROS Bags
 
